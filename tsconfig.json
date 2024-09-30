@@ -21,6 +21,6 @@
       "@/*": ["./src/app/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/AIGame/AIGame.jsx", "src/app/components/CommunityCards/CommunityCard.jsx"],
   "exclude": ["node_modules"]
 }
