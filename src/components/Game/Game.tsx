@@ -1,8 +1,7 @@
 import "./game.scss";
-import { Player } from "../../components/Player/Player";
-import { CommunityCards } from "../../components/CommunityCards/CommunityCard";
-import UserManagementABI from "../../contracts/UserManagement.json";
-import Web3 from "web3";
+import { Player } from "../Player/Player";
+import { CommunityCards } from "components/index";
+import UserManagementABI from "contracts/UserManagement.json";
 
 /* //frontend listen to players, currentPlayer, phase, communityCards */
 let phase = "pre-flop";

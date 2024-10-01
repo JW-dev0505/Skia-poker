@@ -18,9 +18,14 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/app/*"]
+      "@/*": ["./src/app/*"],
+      "config/*": ["./src/config/*"],
+      "context/*": ["./src/context/*"],
+      "contracts/*": ["./src/contracts/*"],
+      "fonts/*": ["./src/fonts/*"],
+      "components/*": ["./src/components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/AIGame/AIGame.jsx", "src/app/components/CommunityCards/CommunityCard.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
