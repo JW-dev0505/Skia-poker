@@ -5,7 +5,7 @@ import { useAccount } from 'wagmi'
 
 // import { PokerTable, Game } from '@/components';
 
-export default function GameTable() {
+export default function WaitingRoom() {
   const { isConnected } = useAccount()
   const router = useRouter()
 

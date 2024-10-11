@@ -63,7 +63,7 @@ const userManagement = new web3.eth.Contract(
 export const Game = () => {
   return (
     <>
-      <div
+      {/* <div
         style={{
           gridColumn: 2,
           gridRow: 1,
@@ -151,7 +151,7 @@ export const Game = () => {
             role={users[4].role}
           />
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

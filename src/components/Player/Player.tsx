@@ -1,11 +1,11 @@
 import "./player.scss";
 
 // eslint-disable-next-line react/prop-types
-export const Player = ({ name, cards = [], role }) => {
+export const Player = ({ name , cards = [], role } : {name : String, cards : any, role : any}) => {
   return (
     <div className="player">
       <div className="player__cards">
-        {cards?.map((card) => (
+        {cards?.map((card : any) => (
           <div key={card} className="player__card"></div>
         ))}
       </div>

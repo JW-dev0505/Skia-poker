@@ -1,22 +1,20 @@
-import "./community.scss";
+import { type FC } from 'react'
+import { CommunityCardsProps } from './CommunityCard.type';
+import "./CommunityCard.scss";
 
-// eslint-disable-next-line react/prop-types
-export const CommunityCards = ({ cards = ["df", "ff"] }) => {
+const CommunityCards: FC<CommunityCardsProps> = ({ cards }) => {
   return (
     <div className="community">
-      {cards?.map((card) => (
+      {cards?.map((card, index) => (
         <div
-          key={card}
-          style={{
-            width: 20,
-            height: 40,
-            border: "1px solid",
-            backgroundColor: "white",
-          }}
+          key={index}
+          className="w-5 h-10 border-s-black bg-white"
         >
           {card}
         </div>
       ))}
     </div>
   );
-};
+}
+
+export default CommunityCards

@@ -9,5 +9,6 @@ export const Timer = () => {
       clearInterval(timer);
     }
   }, 1000);
-  return <div style={{ size: 20, padding: 5 }}>{timeLeft}</div>;
+  // return <div style={{ size: 20, padding: 5 }}>{timeLeft}</div>;
+  return <div>{timeLeft}</div>;
 };
