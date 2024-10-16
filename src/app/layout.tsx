@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import localFont from "next/font/local";
 import "./globals.scss";
-import ContextProvider from 'context/index'
+import { AppkitContextProvider, ContractContextProvider } from 'context/index'
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -31,7 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ContextProvider cookies={cookies}>{children}</ContextProvider>
+        <ContractContextProvider>
+          <AppkitContextProvider cookies={cookies}>
+            {children}
+          </AppkitContextProvider>
+        </ContractContextProvider>
       </body>
     </html>
   );

@@ -18,8 +18,8 @@ if (!projectId) {
 const metadata = {
   name: "Skiapoker",
   description: "Poker Game",
-  // url: "https://skia-poker-zb2i.vercel.app", // origin must match your domain & subdomain
-  url: "https://localhost:3000",
+  url: "https://skia-poker-zb2i.vercel.app", // origin must match your domain & subdomain
+  // url: "https://localhost:3000",
   icons: ["https://avatars.githubusercontent.com/u/179229932"]
 }
 
@@ -35,7 +35,7 @@ const modal = createAppKit({
   }
 })
 
-function ContextProvider({ children, cookies }: { children: ReactNode; cookies: string | null }) {
+function AppkitContextProvider({ children, cookies }: { children: ReactNode; cookies: string | null }) {
   const initialState = cookieToInitialState(wagmiAdapter.wagmiConfig as Config, cookies)
 
   return (
@@ -45,4 +45,4 @@ function ContextProvider({ children, cookies }: { children: ReactNode; cookies: 
   )
 }
 
-export default ContextProvider
+export default AppkitContextProvider

@@ -3,17 +3,33 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect } from "react";
 import { useAccount } from 'wagmi'
+import { useContractContext } from 'context/contract';
+import Toast from 'typescript-toastify'
+
+
 
 export default function App() {
+  const { setSigner } = useContractContext();
   const { address, isConnected } = useAccount()
   const router = useRouter();
   useEffect(()=>{
     console.log("wallet connected : ", isConnected);
-  },[address])
+    setSigner(address);
+  },[isConnected])
 
   const startGame = () => {
     isConnected ? router.push('/GameLobby')
-    : console.log('asdf');
+    : new Toast({
+      position: "top-right",
+      toastMsg: "Connect Your Wallet First.",
+      autoCloseTime: 2000,
+      canClose: true,
+      showProgress: true,
+      pauseOnHover: true,
+      pauseOnFocusLoss: true,
+      type: "default",
+      theme: "dark"
+    });
   }
 
   const chatWithOthers = () => {
@@ -29,11 +45,8 @@ export default function App() {
         <p className="text-base sm:text-xl mb-8">
           {'Experience Texas Hold\'em on the blockchain!'}
         </p>
-        {!isConnected 
-          ? <w3m-connect-button />
-          : <w3m-button/>
-        }
-
+        <w3m-button/>
+        
         <button 
           className="text-xl hover:text-green-400"
           onClick={startGame}
